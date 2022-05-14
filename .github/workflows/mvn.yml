@@ -21,14 +21,14 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        pwd
-        ls
-        ls ..
-        #mvn "spring-boot:start"
+        cd backend
+        mvn "spring-boot:start"
+        cd ../http
         source setup
         chmod u+x boot
         boot
         init database
         source sin user1 password
         tester enable
+        cd ../backend
         mvn "spring-boot:stop"
