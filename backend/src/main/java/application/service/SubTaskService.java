@@ -17,6 +17,16 @@ public class SubTaskService {
     @Autowired
     private TaskRepository taskRepository;
 
+    /* moi */
+    public void addSubTask(Long task_id, SubTask subTask) {
+	    // moze nie byc w bazie task_id
+	    Task task = taskRepository.findById(task_id)
+		    	.orElseThrow(() -> new TaskNotFoundException(task_id));
+	    task.addSubTask(subTask);
+	    subTask.setMainTask(task);
+	    subTaskRepository.save(subTask);
+    }
+
     public SubTask setSubTaskFinished(Long id, boolean checked) {
         SubTask subTask = subTaskRepository.findById(id)
                 .orElseThrow(() -> new SubTaskNotFoundException(id));

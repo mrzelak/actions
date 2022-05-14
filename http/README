@@ -1,0 +1,30 @@
+w tym folderze znajdują się wszystkie skrypty, które obsługują zdefiniowane w springu endpointu z poziomu linii poleceń.
+
+w początku każdego skryptu znajduje się opis, jak wywołać dany skrypt, co robi dane wywołanie, ew. todo dla każdego skryptu.
+
+NIE NALEŻY WYWOŁYWAĆ INACZEJ SKRYPTÓW NIŻ PRZEDSTAWIONO W OPISIE BO INACZEJ KOMPUTER WYBUCHA.
+
+no, prawie.
+
+skrypty mają pewne zabezpieczenia na złe wywołania, ale 99% z nich została napisana w ~5h, na dodatek w godzinach nocnych, więc przy złym wywołaniu jest możliwość  
+uzyskania złego żądania bez żadnego komunikatu błędu.
+
+infosy dla mnie:
+
+brakuje: skryptu / skryptów obsługujących podzadania, i to boli, bo trzeba pisać lwp-request'y z palca.
+
+jak wykonuje się testy integracyjne? najprościej, czyli w ogóle albo z palca.
+
+a teraz na poważnie. najlepiej by było, gdyby w folderze 'tests' w osobnych plikach znajdowały się testy integracyjne, a w folderze 'resps' znajdowały się 'oczekiwane odpowiedzi'
+(cokolwiek to znaczy). 
+
+dla uproszczenia, nazwy z folderu 'tests' mogą odpowiadać 
+
+do tego przydałby się nowy skrypt, np 'tester' który uruchamiałby kolejne testy - DONE :D
+
+todo: wszystkie credentials, token, można trzymać w folderze "cache". na później.
+
+todo: wszystkie pomocnicze skrypty można trzymać w folderze "utils", "funcs" lub "scripts". na później.
+
+edit: NAKAZ KORZYSTANIA Z FUNKCJI ZAMIAST Z ALIASÓW. dlaczego? BO FUNKCJE MOŻESZ EKSPORTOWAĆ. podczas tworzenia subshella aliasy czasem 'giną', a wyeksportowane funkcje nie.
+
