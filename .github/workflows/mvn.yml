@@ -21,7 +21,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        mvn "spring-boot:start"
+        pwd
+        ls
+        ls ..
+        #mvn "spring-boot:start"
         source setup
         chmod u+x boot
         boot
