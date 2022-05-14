@@ -22,14 +22,12 @@ jobs:
     - name: Build with Maven
       run: |
         cd backend
-        mvn package
-        cd target
-        java -jar backend-0.0.1-SNAPSHOT.jar &
-        cd ../../http
+        mvn spring-boot:start --file pom.xml
+        cd ../http
         source setup
         chmod u+x boot
         boot
         init database
         source sin user1 password
         tester enable
-        kill %1
+        mvn spring-boot:stop
