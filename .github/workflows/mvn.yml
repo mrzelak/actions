@@ -22,7 +22,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd backend
-        mvn package
+        mvn package > /dev/null
         #mvn spring-boot:start
         cd ../http
         source setup
