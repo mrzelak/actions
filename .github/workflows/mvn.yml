@@ -1,0 +1,26 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Java CI with Maven
+
+on:
+  push:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+
+    - run: |
+        mvn "spring-boot:start"
+        source setup
+        chmod u+x boot
+        boot
+        init database
+        source sin user1 password
+        tester enable
+        mvn "spring-boot:stop"
