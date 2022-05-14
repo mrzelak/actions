@@ -23,7 +23,8 @@ jobs:
       run: |
         cd backend
         sudo systemctl start postgresql
-        mvn clean package spring-boot:start
+        systemctl status postgresql
+        #mvn clean package spring-boot:start
         cd ../http
         source setup
         chmod u+x boot
