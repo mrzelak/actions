@@ -25,7 +25,7 @@ jobs:
         sudo systemctl start postgresql
         #cat /var/lib/pgsql/pg_hba.conf
         #systemctl status postgresql
-        mvn spring-boot:start
+        mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
         source setup
