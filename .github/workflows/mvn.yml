@@ -22,7 +22,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd backend
-        mvn spring-boot:start --file pom.xml
+        mvn clean package spring-boot:start
         cd ../http
         source setup
         chmod u+x boot
