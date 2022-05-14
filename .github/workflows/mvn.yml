@@ -14,6 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
     - run: |
         mvn "spring-boot:start"
         source setup
@@ -23,7 +27,3 @@ jobs:
         source sin user1 password
         tester enable
         mvn "spring-boot:stop"
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
