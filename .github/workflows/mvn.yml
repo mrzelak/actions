@@ -22,7 +22,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd backend
-        systemctl status postgresql | cat
+        systemctl start postgresql
         mvn clean package spring-boot:start
         cd ../http
         source setup
