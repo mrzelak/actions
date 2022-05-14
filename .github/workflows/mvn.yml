@@ -24,7 +24,7 @@ jobs:
         cd backend
         sudo systemctl start postgresql
         sudo -i -u postgres
-        pwd
+        echo $HOME
         #cat /var/lib/pgsql/pg_hba.conf
         #systemctl status postgresql
         #mvn clean package spring-boot:start
