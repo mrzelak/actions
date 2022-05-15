@@ -31,7 +31,9 @@ jobs:
         #cd /etc/postgresql/14/main
         #sudo cat pg_hba.conf
         cd /etc/postgresql/14/main/conf.d
-        ls -l
+        ls -la
+        echo aaaa
+        ls -la ..
         sudo systemctl start postgresql
         #cd -
         #mvn package spring-boot:start
