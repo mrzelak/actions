@@ -31,13 +31,13 @@ jobs:
         cd /etc/postgresql/14/main
         sudo cat pg_hba.conf
         #sudo ls -l /var/lib/postgresql/14/main
+        sudo systemctl start postgresql
         sudo -u postgres psql "ALTER postgres PASSWORD 'password';"
         exit 1
         cd /etc/postgresql/14/main
         ls -la
         echo aaaa
         ls -la ..
-        sudo systemctl start postgresql
         #cd -
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
