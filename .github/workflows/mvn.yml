@@ -35,16 +35,20 @@ jobs:
         mvn package spring-boot:start
         echo aaaaa
         cd ../http
-        echo czy_jestesmy_przy_setupie
+        echo CZY_JESTESMY_PRZY_SETUPIE
         source setup
-        echo czy_jestesmy_przy_chmodzie
+        echo CZY_JESTESMY_PRZY_CHMODZIE
         chmod u+x boot
-        echo czy_jestesmy_przy_bootowaniu
+        echo CZY_JESTESMY_PRZY_BOOTOWANIU
         boot
-        echo czy_jestesmy_przy_tworzeniu_uzytkownikow
+        echo CZY_JESTESMY_PRZY_TWORZENIU_UZYTKOWNIKOW
         init users
-        echo czy_jestesmy_przy_logowaniu
+        echo CZY_JESTESMY_PRZY_LOGOWANIU
         source sin user1 password
+        echo CZY_JESTESMY_PRZY_TWORZENIU_ZADAN
         init tasks
+        echo CZY_JESTESMY_PRZY_URUCHAMIANIU_TESTOW
         tester enable
+        echo CZY_JESTESMY_PRZY_ZAMYKANIU_MAVENA
         mvn spring-boot:stop
+        echo CZY_JESTESMY_POZA_MAVENEM
