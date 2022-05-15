@@ -26,7 +26,7 @@ if [[ $# == "2" ]]; then
 		save_value "message" "cache/error"
 		rm -f "cache/response"
 		cat "error"
-		exit 1 
+		exit 100 
 	fi
 	exit 0
 	rm -f "cache/token"
