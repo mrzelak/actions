@@ -2,7 +2,7 @@
 
 * **TL;DR**
 
-	Najważniejszym skryptem jest *tester* - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
+	*tester* - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
 
 * **URUCHAMIANIE**
 
@@ -24,6 +24,10 @@
 
 	skrypty mają pewne zabezpieczenia na złe wywołania, ale 99,(9)% z nich została napisana w ~5h, na dodatek w godzinach nocnych, 
 	więc przy złym wywołaniu jest możliwość uzyskania niepoprawnego żądania bez żadnego komunikatu błędu. 
+
+	Na chwilę obecną skrypt *tester* nie przerywa integracji wchodzącej w skład GitHub Actions, co zostanie w niedługiej przyszłości zmienione. Przyczyna tego jest prosta - 
+	Póki co zdefiniowane 4 testy, na których serwer zwraca odpowiedź 500 Internal Server Error; przerwanie integracji wstrzymałoby pracy całego zespołu, więc dopóki błędy
+	te nie zostaną naprawione, nie zostanie to dodane. (na przyszłość: wystarczy dodać w YAML'u if [[ $? == 1 ]]; then exit 1; fi po komendzie tester).
 
 * **STRUKTURA PLIKÓW**
 
