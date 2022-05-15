@@ -2,7 +2,7 @@
 
 * **TL;DR**
 
-	*tester* - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
+	tester - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
 
 * **URUCHAMIANIE**
 
