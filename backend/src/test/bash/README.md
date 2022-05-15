@@ -101,9 +101,9 @@
 
  	wywołanie:           
 
-		. in {username} {password}  	- loguje się odpowiednimi danymi.
+		. in {username} {password}  		- loguje się odpowiednimi danymi.
 
- 		source in {username} {password}	-          - || -
+ 		source in {username} {password}		-          - || -
 
  	skrót od s(ign)in
  	[ bo in nie może być nazwą funkcji >:( ]
