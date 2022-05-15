@@ -25,6 +25,7 @@ jobs:
         sudo systemctl start postgresql
         cd /var/lib/postgresql/14
         ls -la
+        sudo -u postgres cd main; ls -l
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
