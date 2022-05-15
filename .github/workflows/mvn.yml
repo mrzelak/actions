@@ -50,5 +50,5 @@ jobs:
         echo CZY_JESTESMY_PRZY_URUCHAMIANIU_TESTOW
         tester disable
         echo CZY_JESTESMY_PRZY_ZAMYKANIU_MAVENA
-        mvn spring-boot:stop
+        mvn package spring-boot:stop
         echo CZY_JESTESMY_POZA_MAVENEM
