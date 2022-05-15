@@ -30,7 +30,7 @@ jobs:
         sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
         cd /etc/postgresql/14/main
         sudo cat pg_hba.conf
-        sudo systemctl status postgresql
+        sudo systemctl status postgresql | cat
         echo b
         sudo systemctl start postgresql
         echo a
