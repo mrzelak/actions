@@ -6,11 +6,11 @@ Najważniejszym skryptem jest *tester* - wykonuje testy z poziomu żądań HTTP 
 
 * URUCHAMIANIE
 
-	. (spacja) setup
+		. (spacja) setup
 
-	. (spacja) sin (nazwa użytkownika) (hasło)
+		. (spacja) sin (nazwa użytkownika) (hasło)
 
-	tester
+		tester
 
 UWAGA: po kropce MUSI znajdować się spacja.
 
