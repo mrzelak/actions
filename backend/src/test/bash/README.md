@@ -49,33 +49,33 @@
 
 	Poza tymi folderami istotne są jeszcze skrypty *setup* oraz *sin*.
 
-* * setup:
+  * * setup:
 
 	Ten skrypt ustawia znaczącą większość środowiska potrzebną do wykonywania testów integracyjnych, ale ręcznie (z linii poleceń) - np. ustawia prawa wykonywania na skryptach,
 	tworzy funkcje upraszczające wywoływanie poszczególnych skryptów.
 
-* * sin:
+ * * sin:
 
 	[skrót od s(ign)in] Loguje danego użytkownika - ze względów technicznych nie można było nazwać ten skrypt in.
 
 Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
-* * folder *outputs*:
+	* * folder *outputs*:
 
 	otrzymane wyniki testów - sprawdzane jest, czy każdy z tych plików jest zgodny z plikiem o identycznej nazwie z folderu *resps*.
 
-* * logs:
+	* * logs:
 
 	plik, w którym zapisana jest zapisane wyjście skryptu *tester* do analizy poza działaniem testów. 
 
 * SKRYPTY
 
-* * *tester*:
+	* *tester*:
 
 	Sprawdza zgodność nazw plików *resps* z *tests*; wykonuje wszystkie testy zdefiniowane w *tests*; zapisuje ich wynik do odpowiednich plików w katalogu *outputs*; porównuje wynik każdego
 	testu z *outputs* z wzorcowym plikiem z *resps*; wypisuje wszystkie nieudane testy.
 
-* * *setup*:
+	* *setup*:
 
  	ustawia wszystkie potrzebne, oraz wygodne, ustawienia do uruchamiania skryptów.
 
@@ -89,17 +89,16 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 	jest jego source'owanie do poprawnego działania. Dodatkowo, ustawia prawa wykonywania na wszystkich potrzebnych skryptach.
 	UWAGA: definicje powyższych funkcji zakładają, że komendy są wykonywane z poziomu katalogu bash.
 
-* * *sin*:
-
-
- 	skrót od s(ign)in
- 	[ bo in nie może być nazwą funkcji >:( ]
+	* *sin*:
 
  	wywołanie:           
 
 		. in {username} {password}  	- loguje się odpowiednimi danymi.
 
  		source in {username} {password}	-          - || -
+
+ 	skrót od s(ign)in
+ 	[ bo in nie może być nazwą funkcji >:( ]
 
  	ostatni poprawnie wyłuskany token jest zapisany w pliku "token" w formacie ASCII
 
@@ -130,7 +129,7 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	Wykonuje żądanie HTTP GET, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* * *put*:
+	* *put*:
 
  	aktualizuje stan zadanie znajdującego się już w bazie.
 
@@ -147,8 +146,7 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	Wykonuje żądanie HTTP PUT, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* * *post*:
-
+	* *post*:
 
  	wywołanie: 
 
@@ -161,7 +159,7 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	Wykonuje żądanie HTTP POST, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* * *del*:
+	* *del*:
 
 	wywołanie: 
 
@@ -172,7 +170,7 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	Wykonuje żądanie HTTP DELETE, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* * *up*:
+	* *up*:
 
 	wywołanie:
 
@@ -184,9 +182,9 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	Rejestruje użytkownika o wskazanych danych.
 
-* * *init*:
+	* *init*:
 
-	wywolanie:
+	wywołanie:
 
 		init users				- wypełnij bazę generycznymi użytkownikami
 
@@ -196,7 +194,7 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 	Wypełnia bazę danych przykładowymi i generycznymi danymi. Póki co jest to: 10 użytkowników user1-10, z hasłem password. Potem dodaje 20 zadań, z losowanym tytułem oraz opisem spośród 7
 	nazw i opisów zdefiniiowanych w tym skrypcie.
 
-* * *ubuntu_startup*:
+	* *ubuntu_startup*:
 
 	wywołanie:
 		ubuntu_startup
@@ -206,7 +204,7 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 	.github/workflows/mvn.yml w sekcji run; trzeba skonfigurować Ubuntu, gdyż jest to świeżo zainstalowany system operacyjny, i trzeba między innymi zabawić się w konfigurację Postgresa; 
 	inaczej Maven się nie uruchamia. Ten skrypt właśnie wykonuje całą konfigurację Ubuntu.
 
-* * *funcs*:
+	* *funcs*:
 
 	Definiuje funkcję, która wyciąga dane pole z odpowiedzi serwera i zapisuje są do wskazanego pliku.
 
