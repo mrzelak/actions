@@ -21,8 +21,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        source http/setup
-        bash http/ubuntu_startup
+        cd http
+        source setup
+        bash ubuntu_startup
         ##cd backend
         #cd /var/lib/postgresql/14
         ##sudo sed 's/peer/ident/' /etc/postgresql/14/main/pg_hba.conf > tmp
@@ -35,7 +36,7 @@ jobs:
         ##sudo sed -i 's/ident/password/' /etc/postgresql/14/main/pg_hba.conf
         ##sudo systemctl restart postgresql
         ##mvn package spring-boot:start
-        cd backend
+        cd ../backend
         mvn package spring-boot:start
         cd ../http
         #source setup
