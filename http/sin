@@ -15,7 +15,6 @@
 
 source funcs
 
-exit 0
 
 if [[ $# == "2" ]]; then
 	echo "{\"username\":\"$1\",\"password\":\"$2\"}" > "cache/credentials"
@@ -29,6 +28,7 @@ if [[ $# == "2" ]]; then
 		cat "error"
 		exit 1 
 	fi
+	exit 0
 	rm -f "cache/token"
 	# response potrzebny do save_value
 	save_value "token" "cache/token"
