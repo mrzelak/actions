@@ -1,8 +1,0 @@
-#!/bin/bash
-
-up useruser password rozprochy
-
-rm -f "response"
-
-# jak zostanie naprawione, to trzeba recznie usunac z bazy!
-# strona nie udostepnia mozliwosci usuwania uzytkownikow

@@ -21,15 +21,18 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        cd http
+        cd backend/src/test/bash
         source setup
-        bash ubuntu_startup
-        cd ../backend
+        bash scripts/ubuntu_startup
+        cd ../../..
+        #cd ../backend
         mvn package spring-boot:start
-        cd ../http
+        cd src/test/bash
+        #cd ../http
         init users
         source sin user1 password
         init tasks
         tester enable
-        cd ../backend
+        cd ../../..
+        #cd ../backend
         mvn spring-boot:stop
