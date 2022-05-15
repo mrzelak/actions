@@ -38,6 +38,7 @@ jobs:
         source setup
         chmod u+x boot
         boot
+        echo "czy jestesmy przy tworzeniu uzytkownikow?"
         init users
         echo "czy jestesmy przy logowaniu?"
         source sin user1 password
