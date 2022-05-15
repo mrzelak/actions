@@ -16,8 +16,6 @@ if [[ $1 == 'task' ]]; then
 	id=$2
 	lwp-request -m delete -b http://localhost:8080 -H "Authorization: Bearer $token" task/$id
 elif [[ $1 == 'prev' ]]; then
-	#echo "w kodzie jest błędnie!!!"
-	#exit 1
 	id=$2
 	#lwp-request -m delete -b http://localhost:8080 -c application/json -f -H "Authorization: Bearer $token" task/$id/previous < task
 	lwp-request -m delete -b http://localhost:8080 -c application/json -f -H "Authorization: Bearer $token" task/$id/previous
