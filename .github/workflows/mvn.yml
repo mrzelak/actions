@@ -32,13 +32,8 @@ jobs:
         sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'password';"
         sudo sed -i 's/ident/password/' /etc/postgresql/14/main/pg_hba.conf
         sudo systemctl restart postgresql
-        echo aaaa
-        #cd /etc/postgresql/14/main
-        #ls -la
-        #ls -la ..
-        #cd -
         mvn package spring-boot:start
-        #mvn clean package spring-boot:start
+        echo aaaaa
         cd ../http
         source setup
         chmod u+x boot
