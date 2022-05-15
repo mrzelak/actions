@@ -27,7 +27,7 @@
 
 	Na chwilę obecną skrypt *tester* nie przerywa integracji wchodzącej w skład GitHub Actions, co zostanie w niedługiej przyszłości zmienione. Przyczyna tego jest prosta - 
 	Póki co zdefiniowane 4 testy, na których serwer zwraca odpowiedź 500 Internal Server Error; przerwanie integracji wstrzymałoby pracy całego zespołu, więc dopóki błędy
-	te nie zostaną naprawione, nie zostanie to dodane. (na przyszłość: wystarczy dodać w YAML'u if [[ $? == 1 ]]; then exit 1; fi po komendzie tester, i poprawić if'a z logami).
+	te nie zostaną naprawione, nie zostanie to dodane. (na przyszłość: wystarczy dodać w YAML'u if [[ $? == 1 ]]; then exit 1; fi po komendzie tester, i poprawić if'a z logami w tester).
 
 * **STRUKTURA PLIKÓW**
 
