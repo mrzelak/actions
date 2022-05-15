@@ -23,8 +23,10 @@ jobs:
       run: |
         cd backend
         sudo systemctl start postgresql
-        sudo -u postgres psql
-        mvn package spring-boot:start
+        whoami
+        sudo -u postgres -i
+        whoami
+        #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
         source setup
