@@ -12,7 +12,7 @@
 
 		tester
 
-	**UWAGA**: po kropce MUSI znajdować się spacja.
+	**UWAGA**: po kropce **MUSI** znajdować się spacja.
 
 * **INTRO**
 
