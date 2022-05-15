@@ -158,7 +158,7 @@
 
  	wywołanie: 
 
-		post task {name} 			- wyślij nowe zadanie o nazwie {name}
+		post task {name}			- wyślij nowe zadanie o nazwie {name}
 
 		post task {name} {description}		-                - || - 	       i opisie {description}
 
@@ -205,10 +205,13 @@
 	* *ubuntu_startup*:
 
 	wywołanie:
+
 		ubuntu_startup
 
 	dużo by pisać :)
+
 	w skrócie: GitHub Actions podczas push'a uruchamia Ubuntu na maszynie wirtualnej na Dockerze na swoim serwerze, na którym to Ubuntu uruchamiany jest kod przedstawiony w YAML'u w 
+
 	.github/workflows/mvn.yml w sekcji run; trzeba skonfigurować Ubuntu, gdyż jest to świeżo zainstalowany system operacyjny, i trzeba między innymi zabawić się w konfigurację Postgresa; 
 	inaczej Maven się nie uruchamia. Ten skrypt właśnie wykonuje całą konfigurację Ubuntu.
 
