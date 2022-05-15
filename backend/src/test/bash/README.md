@@ -12,7 +12,7 @@
 
 		tester
 
-	UWAGA: po kropce MUSI znajdować się spacja.
+	**UWAGA**: po kropce MUSI znajdować się spacja.
 
 * **INTRO**
 
@@ -95,7 +95,7 @@
 
 	Ustawia środowisko w powłoce potrzebne do wykonywania testów - definiuje funkcje, dzięki którym można korzystać ze skryptów get, put, itd. jak z wbudowanych komend powłoki, stąd potrzebne
 	jest jego source'owanie do poprawnego działania. Dodatkowo, ustawia prawa wykonywania na wszystkich potrzebnych skryptach.
-	UWAGA: definicje powyższych funkcji zakładają, że komendy są wykonywane z poziomu katalogu bash.
+	**UWAGA**: definicje powyższych funkcji zakładają, że komendy są wykonywane z poziomu katalogu bash.
 
 	* *sin*:
 
