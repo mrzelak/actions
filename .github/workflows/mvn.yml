@@ -23,9 +23,7 @@ jobs:
       run: |
         cd backend
         sudo systemctl start postgresql
-        whoami
-        sudo -u postgres -i
-        whoami
+        find / -name pg_hba.conf
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
