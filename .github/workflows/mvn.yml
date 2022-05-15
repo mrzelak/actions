@@ -23,15 +23,15 @@ jobs:
       run: |
         cd backend
         #cd /var/lib/postgresql/14
-        #sudo sed 's/peer/password/' /etc/postgresql/14/main/pg_hba.conf > tmp
-        #sudo sed -i 's/local.*all.*postgres.*password//' tmp
-        #sudo sed -i 's/scram-sha-256/password/' tmp
-        #sudo rm -f /etc/postgresql/14/main/pg_hba.conf
-        #sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
-        #cd /etc/postgresql/14/main
-        #sudo cat pg_hba.conf
+        sudo sed 's/peer/password/' /etc/postgresql/14/main/pg_hba.conf > tmp
+        sudo sed -i 's/local.*all.*postgres.*password//' tmp
+        sudo sed -i 's/scram-sha-256/password/' tmp
+        sudo rm -f /etc/postgresql/14/main/pg_hba.conf
+        sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
+        cd /etc/postgresql/14/main
+        sudo cat pg_hba.conf
         #sudo ls -l /var/lib/postgresql/14/main
-        sudo cat /var/lib/postgresql/14/main/postmaster.opts
+        sudo -u postgres psql "ALTER postgres PASSWORD 'password';"
         exit 1
         cd /etc/postgresql/14/main
         ls -la
