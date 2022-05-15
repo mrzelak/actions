@@ -23,9 +23,8 @@ jobs:
       run: |
         cd backend
         sudo systemctl start postgresql
-        cd /var/lib/postgresql/14
-        sudo cd main
-        ls -l
+        #cd /var/lib/postgresql/14
+        ls -la
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
