@@ -26,7 +26,7 @@ jobs:
         #cd /var/lib/postgresql/14
         cd /etc/postgresql/14/main
         echo hba
-        cat pg_hba.conf
+        sudo cat pg_hba.conf
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
