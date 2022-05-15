@@ -6,9 +6,9 @@
 
 * **URUCHAMIANIE**
 
-		. (spacja) setup
+		. setup
 
-		. (spacja) sin (nazwa użytkownika) (hasło)
+		. sin (nazwa użytkownika) (hasło)
 
 		tester
 
