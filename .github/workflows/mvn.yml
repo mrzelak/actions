@@ -30,7 +30,8 @@ jobs:
         #sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
         #cd /etc/postgresql/14/main
         #sudo cat pg_hba.conf
-        cd /etc/postgresql/14/main/conf.d
+        cat /etc/postgresql-setup/upgrade/postgresql.conf
+        cd /etc/postgresql/14/main
         ls -la
         echo aaaa
         ls -la ..
