@@ -15,6 +15,7 @@
 
 source funcs
 
+echo "CZY TO SIE WYSWIETLI?"
 
 if [[ $# == "2" ]]; then
 	echo "{\"username\":\"$1\",\"password\":\"$2\"}" > "cache/credentials"
