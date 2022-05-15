@@ -45,7 +45,6 @@ jobs:
         init users
         echo CZY_JESTESMY_PRZY_LOGOWANIU
         source sin user1 password
-        exit 1
         echo CZY_JESTESMY_PRZY_TWORZENIU_ZADAN
         init tasks
         echo CZY_JESTESMY_PRZY_URUCHAMIANIU_TESTOW
