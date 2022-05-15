@@ -44,7 +44,7 @@ jobs:
         echo CZY_JESTESMY_PRZY_TWORZENIU_UZYTKOWNIKOW
         init users
         echo CZY_JESTESMY_PRZY_LOGOWANIU
-        exit 0
+        exit 1
         source sin user1 password
         echo CZY_JESTESMY_PRZY_TWORZENIU_ZADAN
         init tasks
