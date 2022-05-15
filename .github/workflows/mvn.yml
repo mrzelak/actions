@@ -39,8 +39,8 @@ jobs:
         chmod u+x boot
         boot
         init users
+        echo "czy jestesmy przy logowaniu?"
         source sin user1 password
         init tasks
-        echo "czy jestesmy przy taskach?"
         tester enable
         mvn spring-boot:stop

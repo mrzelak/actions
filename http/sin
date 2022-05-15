@@ -38,3 +38,4 @@ if [[ $# == "2" ]]; then
 else
 	echo "niepoprawne wywołanie"
 fi
+exit 0
