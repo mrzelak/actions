@@ -31,7 +31,9 @@ jobs:
         cd /etc/postgresql/14/main
         sudo cat pg_hba.conf
         sudo systemctl status postgresql
+        echo b
         sudo systemctl start postgresql
+        echo a
         sudo systemctl status postgresql
         cd -
         pwd
