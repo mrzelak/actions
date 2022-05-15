@@ -48,7 +48,7 @@ jobs:
         echo CZY_JESTESMY_PRZY_TWORZENIU_ZADAN
         init tasks
         echo CZY_JESTESMY_PRZY_URUCHAMIANIU_TESTOW
-        tester enable
+        tester disable
         echo CZY_JESTESMY_PRZY_ZAMYKANIU_MAVENA
         mvn spring-boot:stop
         echo CZY_JESTESMY_POZA_MAVENEM
