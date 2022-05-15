@@ -58,7 +58,7 @@
 
 	[skrót od s(ign)in] Loguje danego użytkownika - ze względów technicznych nie można było nazwać ten skrypt in.
 
-Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
+	Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	* folder *outputs*:
 
