@@ -27,44 +27,44 @@
 
 * STRUKTURA PLIKÓW
 
-	istotne są 4 foldery:
+	Istotne są 4 foldery:
 
-* * *tests*:
+	* *tests*:
 
 	W tym folderze znajdują się wykonywane testy. 
 	Jako wynik testu traktowane jest standardowe wyjście testu, które jest zapisywane - testy mają formę skryptów Basha, jednak przy ich wykonywaniu jest przygotowane całe środowisko, i można wygodnie korzystać ze skryptów.
 	Pliki mogą mieć (prawie) dowolne nazwy, aby tylko z sensem - wszystkie pliki znajdujące się w tym folderze zostaną wykonane.
 
-* * *resps*:
+	* *resps*:
 
 	[skrót od resp(onse)s] W tym folderze znajdują się żądane wyniki testów - każdy z plików powinien mieć odpowiadający test o identycznej nazwie pliku w katalogu *tests*.
 
-* * *scripts*:
+	* *scripts*:
 
 	Większość skryptów, która odwalają potrzebną robotę. Opis działania i możliwe wywołania znajdują się w sekcji SKRYPTY.
 
-* * *cache*:
+	* *cache*:
 
 	Tymczasowe wyniki skryptów do plików - między innymi zapisywane są tu: dane użytkownika potrzebne do logowania, odpowiedzi serwera, itd.
 
 	Poza tymi folderami istotne są jeszcze skrypty *setup* oraz *sin*.
 
-  * * setup:
+	* setup:
 
 	Ten skrypt ustawia znaczącą większość środowiska potrzebną do wykonywania testów integracyjnych, ale ręcznie (z linii poleceń) - np. ustawia prawa wykonywania na skryptach,
 	tworzy funkcje upraszczające wywoływanie poszczególnych skryptów.
 
- * * sin:
+	* sin:
 
 	[skrót od s(ign)in] Loguje danego użytkownika - ze względów technicznych nie można było nazwać ten skrypt in.
 
 Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
-	* * folder *outputs*:
+	* folder *outputs*:
 
 	otrzymane wyniki testów - sprawdzane jest, czy każdy z tych plików jest zgodny z plikiem o identycznej nazwie z folderu *resps*.
 
-	* * logs:
+	* logs:
 
 	plik, w którym zapisana jest zapisane wyjście skryptu *tester* do analizy poza działaniem testów. 
 
@@ -72,18 +72,26 @@ Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 	* *tester*:
 
+	wywołanie:
+
+		tester				- uruchamia całą procedurę testera;
+
+		tester debug			- uruchamia testera bez porównania z katalogiem *resps*, generuje katalog *outputs*;
+
+		tester enable			- identyczne do wywołania `tester`, lepsza przejrzystość w YAML'u;
+
+		tester disable			- wyłącza testera, przydatne do określenia w YAML'u.
+
 	Sprawdza zgodność nazw plików *resps* z *tests*; wykonuje wszystkie testy zdefiniowane w *tests*; zapisuje ich wynik do odpowiednich plików w katalogu *outputs*; porównuje wynik każdego
 	testu z *outputs* z wzorcowym plikiem z *resps*; wypisuje wszystkie nieudane testy.
 
 	* *setup*:
 
- 	ustawia wszystkie potrzebne, oraz wygodne, ustawienia do uruchamiania skryptów.
-
  	wywołanie:
 
 		. setup
-		source setup
 
+		source setup
 
 	Ustawia środowisko w powłoce potrzebne do wykonywania testów - definiuje funkcje, dzięki którym można korzystać ze skryptów get, put, itd. jak z wbudowanych komend powłoki, stąd potrzebne
 	jest jego source'owanie do poprawnego działania. Dodatkowo, ustawia prawa wykonywania na wszystkich potrzebnych skryptach.
