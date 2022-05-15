@@ -1,5 +1,19 @@
 # testy integracyjne
 
+* TL;DR
+
+Najważniejszym skryptem jest *tester* - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
+
+* URUCHAMIANIE
+
+. (spacja) setup
+
+. (spacja) sin (nazwa użytkownika) (hasło)
+
+tester
+
+UWAGA: po kropce MUSI znajdować się spacja.
+
 * INTRO
 
 w tym folderze znajdują się wszystkie skrypty, które obsługują zdefiniowane w springu endpointu z poziomu linii poleceń - dzięki temu testujemy jak backend obsługuje żądania HTTP.
@@ -8,25 +22,16 @@ NIE NALEŻY WYWOŁYWAĆ INACZEJ SKRYPTÓW NIŻ PRZEDSTAWIONO W OPISIE BO INACZEJ
 
 no, prawie.
 
-skrypty mają pewne zabezpieczenia na złe wywołania, ale 99,(9)% z nich została napisana w ~5h, na dodatek w godzinach nocnych, więc przy złym wywołaniu jest możliwość uzyskania złego żądania bez żadnego komunikatu błędu. 
-
-* URUCHAMIANIE
-
-. setup
-
-. sin (nazwa użytkownika) (hasło)
-
-tester
-
-UWAGA: po kropce MUSI znajdować się spacja.
+skrypty mają pewne zabezpieczenia na złe wywołania, ale 99,(9)% z nich została napisana w ~5h, na dodatek w godzinach nocnych, 
+więc przy złym wywołaniu jest możliwość uzyskania niepoprawnego żądania bez żadnego komunikatu błędu. 
 
 * DOKUMENTACJA
 
-* STRUKTURA PLIKÓW
+* * STRUKTURA PLIKÓW
 
 istotne są 4 foldery:
 
-* *tests*:
+* * *tests*:
 
 W tym folderze znajdują się wykonywane testy. 
 Jako wynik testu traktowane jest standardowe wyjście testu, które jest zapisywane - testy mają formę skryptów Basha, jednak przy ich wykonywaniu jest przygotowane całe środowisko, i można wygodnie korzystać ze skryptów.
@@ -38,7 +43,7 @@ Pliki mogą mieć (prawie) dowolne nazwy, aby tylko z sensem - wszystkie pliki z
 
 * *scripts*:
 
-Większość skryptów, która odwalają potrzebną robotę. Opis działania i możliwe wywołania znajdują się w sekcji DOKUMENTACJA.
+Większość skryptów, która odwalają potrzebną robotę. Opis działania i możliwe wywołania znajdują się w sekcji SKRYPTY.
 
 * *cache*:
 
@@ -65,45 +70,152 @@ otrzymane wyniki testów - sprawdzane jest, czy każdy z tych plików jest zgodn
 
 plik, w którym zapisana jest zapisane wyjście skryptu *tester* do analizy poza działaniem testów. 
 
-* OPIS DZIAŁANIA SKRYPTÓW
+* SKRYPTY
 
 * *tester*:
 
+Sprawdza zgodność nazw plików *resps* z *tests*; wykonuje wszystkie testy zdefiniowane w *tests*; zapisuje ich wynik do odpowiednich plików w katalogu *outputs*; porównuje wynik każdego
+testu z *outputs* z wzorcowym plikiem z *resps*; wypisuje wszystkie nieudane testy.
+
 * *setup*:
+
+ ustawia wszystkie potrzebne, oraz wygodne, ustawienia do uruchamiania skryptów.
+
+ wywołanie:
+
+		. setup
+		source setup
+
+
+Ustawia środowisko w powłoce potrzebne do wykonywania testów - definiuje funkcje, dzięki którym można korzystać ze skryptów get, put, itd. jak z wbudowanych komend powłoki, stąd potrzebne
+jest jego source'owanie do poprawnego działania. Dodatkowo, ustawia prawa wykonywania na wszystkich potrzebnych skryptach.
+UWAGA: definicje powyższych funkcji zakładają, że komendy są wykonywane z poziomu katalogu bash.
 
 * *sin*:
 
+
+ skrót od s(ign)in
+ [ bo in nie może być nazwą funkcji >:( ]
+
+ wywołanie:           . in {username} {password}  	- loguje się odpowiednimi danymi.
+
+ alt. wywołanie: source in {username} {password}	-          - || -
+
+ ostatni poprawnie wyłuskany token jest zapisany w pliku "token" w formacie ASCII
+
+ Q: *raczej* trzeba eksportować token.
+
+Loguje się przedstawionymi danymi użytkownika. Z odpowiedzi serwera wyciąga token JWT, zapisuje go do zmiennej `token`, po czym go eksportuje; stąd, do poprawnego działania potrzebne jest
+source'owanie tego skryptu.
+
 * *get*:
+
+wywołanie:
+
+ 		get one task  			- pobiera pierwsze zadanie z otrzymanego JSON'a
+
+ 		get task      			- pobiera wszystkie taski z bazy
+
+ 		get task {id}			- pobiera taski {id}
+
+ 		get id from file {file} 	- wyłuskaj ID z pliku {file};
+				  		use case:
+				  		post {name} {descr} > response; get id from file response - masz ID nowego zadania
+
+ 		get prev id from file {file}  	- wyłuskaj ID pierwszego zadania poprzedzającego z pliku {file}
+
+ 		get status from file {file}   	-       ;/
+
+ 		get error from file {file}
+
+ ostatnia otrzymana odpowiedź jest zapisana w pliku "response" w formacie JSON
+
+
+Wykonuje żądanie HTTP GET, oraz kilka obudowujących czynności obudowujących te żądanie.
 
 * *put*:
 
+ aktualizuje stan zadanie znajdującego się już w bazie.
+
+ wywołanie:
+
+ 		put check {id}				- oznacz zadanie o ID {id} jako wykonane; 
+
+ 		put uncheck {id}			- oznacz zadanie o ID {id} jako niewykonane;
+
+ 		put prev {id}				- oznacz zadanie czytane ze standardowego wejścia jako poprzednie do zadania o ID {id};
+
+ 		put task {id}				- zaktualizuj zadanie o ID {id} czytane ze standardowego wejścia.
+
+
+Wykonuje żądanie HTTP PUT, oraz kilka obudowujących czynności obudowujących te żądanie.
+
 * *post*:
+
+
+ wywołanie: 
+		post task {name} 			- wyślij nowe zadanie o nazwie {name}
+
+		post task {name} {description}		-                - || - 	       i opisie {description}
+
+ w pliku "task" jest zapisany ostatnio wysłane zadanie.
+
+
+Wykonuje żądanie HTTP POST, oraz kilka obudowujących czynności obudowujących te żądanie.
 
 * *del*:
 
+ wywołanie: 
+
+ 		del task {id} - usuń zadanie {id}
+
+		del prev {id} - usuń zadanie określone jako poprzedzające do {id}; jest ono przechowywane w pliku "task".
+
+
+Wykonuje żądanie HTTP DELETE, oraz kilka obudowujących czynności obudowujących te żądanie.
+
 * *up*:
+
+skrót od (sign)up - rejestruje użytkownika
+
+ wywołanie:
+		up {username} {password} {email}		- zarejestruj użytkownika o nazwie {username}, haśle {password} i mailu {email}.
+
+ ostatnio przedstawione dane są zapisane w pliku "credentials" w formacie JSON
+
+Rejestruje użytkownika o wskazanych danych.
 
 * *init*:
 
+ wywolanie:
+
+		init users		- wypełnij bazę generycznymi użytkownikami
+
+		init tasks		- wypełnij bazę generycznymi zadaniami
+
+
+Wypełnia bazę danych przykładowymi i generycznymi danymi. Póki co jest to: 10 użytkowników user1-10, z hasłem password. Potem dodaje 20 zadań, z losowanym tytułem oraz opisem spośród 7
+nazw i opisów zdefiniiowanych w tym skrypcie.
+
 * *ubuntu_startup*:
+
+wywołanie:
+		ubuntu_startup
+
+dużo by pisać :)
+w skrócie: GitHub Actions podczas push'a uruchamia Ubuntu na maszynie wirtualnej na Dockerze na swoim serwerze, na którym to Ubuntu uruchamiany jest kod przedstawiony w YAML'u w 
+.github/workflows/mvn.yml w sekcji run; trzeba skonfigurować Ubuntu, gdyż jest to świeżo zainstalowany system operacyjny, i trzeba między innymi zabawić się w konfigurację Postgresa; 
+inaczej Maven się nie uruchamia. Ten skrypt właśnie wykonuje całą konfigurację Ubuntu.
 
 * *funcs*:
 
+Definiuje funkcję, która wyciąga dane pole z odpowiedzi serwera i zapisuje są do wskazanego pliku.
 
 infosy dla mnie:
 
 brakuje: skryptu / skryptów obsługujących podzadania, i to boli, bo trzeba pisać lwp-request'y z palca.
 
 jak wykonuje się testy integracyjne? najprościej, czyli w ogóle albo z palca.
-
-a teraz na poważnie. najlepiej by było, gdyby 
-
-
-do tego przydałby się nowy skrypt, np 'tester' który uruchamiałby kolejne testy - DONE :D
-
-todo: wszystkie credentials, token, można trzymać w folderze "cache". na później.
-
-todo: wszystkie pomocnicze skrypty można trzymać w folderze "utils", "funcs" lub "scripts". na później.
 
 edit: NAKAZ KORZYSTANIA Z FUNKCJI ZAMIAST Z ALIASÓW. dlaczego? BO FUNKCJE MOŻESZ EKSPORTOWAĆ. podczas tworzenia subshella aliasy czasem 'giną', a wyeksportowane funkcje nie.
 
