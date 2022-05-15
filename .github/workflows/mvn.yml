@@ -23,7 +23,8 @@ jobs:
       run: |
         cd backend
         sudo systemctl start postgresql
-        find / -name pg_hba.conf
+        cd /var/lib/postgresql
+        ls
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
