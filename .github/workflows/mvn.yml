@@ -41,5 +41,5 @@ jobs:
         init users
         source sin user1 password
         init tasks
-        tester enable
+        tester disable
         mvn spring-boot:stop
