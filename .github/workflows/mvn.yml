@@ -23,9 +23,9 @@ jobs:
       run: |
         cd backend
         #cd /var/lib/postgresql/14
-        sudo sed 's/peer/password/' /etc/postgresql/14/main/pg_hba.conf > tmp
+        sudo sed 's/peer/ident/' /etc/postgresql/14/main/pg_hba.conf > tmp
         sudo sed -i 's/local.*all.*postgres.*password//' tmp
-        sudo sed -i 's/scram-sha-256/password/' tmp
+        sudo sed -i 's/scram-sha-256/ident/' tmp
         sudo rm -f /etc/postgresql/14/main/pg_hba.conf
         sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
         cd /etc/postgresql/14/main
