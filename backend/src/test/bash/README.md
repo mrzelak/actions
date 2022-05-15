@@ -49,16 +49,16 @@
 
 	Poza tymi folderami istotne są jeszcze skrypty *setup* oraz *sin*.
 
-* * *setup*:
+* * setup:
 
 	Ten skrypt ustawia znaczącą większość środowiska potrzebną do wykonywania testów integracyjnych, ale ręcznie (z linii poleceń) - np. ustawia prawa wykonywania na skryptach,
 	tworzy funkcje upraszczające wywoływanie poszczególnych skryptów.
 
-* * *sin*:
+* * sin:
 
 	[skrót od s(ign)in] Loguje danego użytkownika - ze względów technicznych nie można było nazwać ten skrypt in.
 
-	poza tym, znajdują się też mniej istotne rzeczy, takie jak:
+Poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
 * * folder *outputs*:
 
@@ -106,7 +106,7 @@
 	Loguje się przedstawionymi danymi użytkownika. Z odpowiedzi serwera wyciąga token JWT, zapisuje go do zmiennej `token`, po czym go eksportuje; stąd, do poprawnego działania potrzebne jest
 	source'owanie tego skryptu.
 
-* * *get*:
+	* *get*:
 
 	wywołanie:
 
@@ -127,7 +127,6 @@
  		get error from file {file}
 
  	ostatnia otrzymana odpowiedź jest zapisana w pliku "response" w formacie JSON
-
 
 	Wykonuje żądanie HTTP GET, oraz kilka obudowujących czynności obudowujących te żądanie.
 
@@ -166,19 +165,20 @@
 
 	wywołanie: 
 
- 		del task {id} - usuń zadanie {id}
+ 		del task {id} 				- usuń zadanie {id}
 
-		del prev {id} - usuń zadanie określone jako poprzedzające do {id}; jest ono przechowywane w pliku "task".
+		del prev {id} 				- usuń zadanie określone jako poprzedzające do {id}; jest ono przechowywane w pliku "task".
 
 
 	Wykonuje żądanie HTTP DELETE, oraz kilka obudowujących czynności obudowujących te żądanie.
 
 * * *up*:
 
-	skrót od (sign)up - rejestruje użytkownika
-
 	wywołanie:
-		up {username} {password} {email}		- zarejestruj użytkownika o nazwie {username}, haśle {password} i mailu {email}.
+
+		up {username} {password} {email}	- zarejestruj użytkownika o nazwie {username}, haśle {password} i mailu {email}.
+
+	skrót od (sign)up - rejestruje użytkownika
 
 	ostatnio przedstawione dane są zapisane w pliku "credentials" w formacie JSON
 
@@ -188,9 +188,9 @@
 
 	wywolanie:
 
-		init users		- wypełnij bazę generycznymi użytkownikami
+		init users				- wypełnij bazę generycznymi użytkownikami
 
-		init tasks		- wypełnij bazę generycznymi zadaniami
+		init tasks				- wypełnij bazę generycznymi zadaniami
 
 
 	Wypełnia bazę danych przykładowymi i generycznymi danymi. Póki co jest to: 10 użytkowników user1-10, z hasłem password. Potem dodaje 20 zadań, z losowanym tytułem oraz opisem spośród 7
