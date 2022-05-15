@@ -37,8 +37,7 @@ jobs:
         #ls -la
         #ls -la ..
         #cd -
-        #mvn package spring-boot:start
-        mvn spring-boot:start
+        mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
         source setup
