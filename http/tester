@@ -90,6 +90,7 @@ if [[ $logs ]]; then
 	echo -e "\nfound error(s)\n"
 	cat logs
 	#echo $logs
+	exit 0
 	exit 1
 fi
 exit 0

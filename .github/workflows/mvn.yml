@@ -41,5 +41,6 @@ jobs:
         init users
         source sin user1 password
         init tasks
-        tester disable
+        echo "czy jestesmy przy taskach?"
+        tester enable
         mvn spring-boot:stop
