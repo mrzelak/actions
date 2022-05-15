@@ -23,20 +23,18 @@ jobs:
       run: |
         cd backend
         #cd /var/lib/postgresql/14
-        sudo sed 's/peer/password/' /etc/postgresql/14/main/pg_hba.conf > tmp
-        sudo sed -i 's/local.*all.*postgres.*password//' tmp
-        sudo sed -i 's/scram-sha-256/password/' tmp
-        sudo rm -f /etc/postgresql/14/main/pg_hba.conf
-        sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
-        cd /etc/postgresql/14/main
-        sudo cat pg_hba.conf
-        sudo systemctl status postgresql | cat
-        echo b
+        #sudo sed 's/peer/password/' /etc/postgresql/14/main/pg_hba.conf > tmp
+        #sudo sed -i 's/local.*all.*postgres.*password//' tmp
+        #sudo sed -i 's/scram-sha-256/password/' tmp
+        #sudo rm -f /etc/postgresql/14/main/pg_hba.conf
+        #sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
+        #cd /etc/postgresql/14/main
+        #sudo cat pg_hba.conf
+        cd /etc/postgresql/14/main/conf.d
+        ls -l
         sudo systemctl start postgresql
-        echo a
-        sudo systemctl status postgresql | cat
-        cd -
-        mvn package spring-boot:start
+        #cd -
+        #mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
         source setup
