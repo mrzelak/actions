@@ -28,8 +28,8 @@ jobs:
         sudo sed -i 's/scram-sha-256/ident/' tmp
         sudo rm -f /etc/postgresql/14/main/pg_hba.conf
         sudo cp tmp /etc/postgresql/14/main/pg_hba.conf
-        cd /etc/postgresql/14/main
-        sudo cat pg_hba.conf
+        #cd /etc/postgresql/14/main
+        #sudo cat pg_hba.conf
         #sudo ls -l /var/lib/postgresql/14/main
         sudo systemctl start postgresql
         sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'password';"
@@ -39,7 +39,7 @@ jobs:
         #ls -la
         #ls -la ..
         #cd -
-        #mvn package spring-boot:start
+        mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
         source setup
