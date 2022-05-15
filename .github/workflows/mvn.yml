@@ -34,10 +34,9 @@ jobs:
         echo b
         sudo systemctl start postgresql
         echo a
-        sudo systemctl status postgresql
+        sudo systemctl status postgresql | cat
         cd -
-        pwd
-        #mvn package spring-boot:start
+        mvn package spring-boot:start
         #mvn clean package spring-boot:start
         cd ../http
         source setup
