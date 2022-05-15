@@ -35,12 +35,15 @@ jobs:
         mvn package spring-boot:start
         echo aaaaa
         cd ../http
+        echo czy_jestesmy_przy_setupie
         source setup
+        echo czy_jestesmy_przy_chmodzie
         chmod u+x boot
+        echo czy_jestesmy_przy_bootowaniu
         boot
-        echo "czy jestesmy przy tworzeniu uzytkownikow?"
+        echo czy_jestesmy_przy_tworzeniu_uzytkownikow
         init users
-        echo "czy jestesmy przy logowaniu?"
+        echo czy_jestesmy_przy_logowaniu
         source sin user1 password
         init tasks
         tester enable
