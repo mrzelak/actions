@@ -33,11 +33,11 @@ jobs:
         #sudo ls -l /var/lib/postgresql/14/main
         sudo systemctl start postgresql
         sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'password';"
+        sudo systemctl restart postgresql
         echo aaaa
-        exit 1
-        cd /etc/postgresql/14/main
-        ls -la
-        ls -la ..
+        #cd /etc/postgresql/14/main
+        #ls -la
+        #ls -la ..
         #cd -
         #mvn package spring-boot:start
         #mvn clean package spring-boot:start
