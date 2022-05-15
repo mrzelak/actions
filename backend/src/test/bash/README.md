@@ -6,11 +6,11 @@ Najważniejszym skryptem jest *tester* - wykonuje testy z poziomu żądań HTTP 
 
 * URUCHAMIANIE
 
-. (spacja) setup
+	. (spacja) setup
 
-. (spacja) sin (nazwa użytkownika) (hasło)
+	. (spacja) sin (nazwa użytkownika) (hasło)
 
-tester
+	tester
 
 UWAGA: po kropce MUSI znajdować się spacja.
 
@@ -97,13 +97,13 @@ UWAGA: definicje powyższych funkcji zakładają, że komendy są wykonywane z p
  skrót od s(ign)in
  [ bo in nie może być nazwą funkcji >:( ]
 
- wywołanie:           . in {username} {password}  	- loguje się odpowiednimi danymi.
+ wywołanie:           
 
- alt. wywołanie: source in {username} {password}	-          - || -
+		. in {username} {password}  	- loguje się odpowiednimi danymi.
+
+ 		source in {username} {password}	-          - || -
 
  ostatni poprawnie wyłuskany token jest zapisany w pliku "token" w formacie ASCII
-
- Q: *raczej* trzeba eksportować token.
 
 Loguje się przedstawionymi danymi użytkownika. Z odpowiedzi serwera wyciąga token JWT, zapisuje go do zmiennej `token`, po czym go eksportuje; stąd, do poprawnego działania potrzebne jest
 source'owanie tego skryptu.
