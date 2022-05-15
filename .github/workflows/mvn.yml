@@ -38,7 +38,8 @@ jobs:
         source setup
         chmod u+x boot
         boot
-        init database
+        init users
         source sin user1 password
+        init tasks
         tester enable
         mvn spring-boot:stop
