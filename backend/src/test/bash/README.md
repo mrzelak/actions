@@ -1,10 +1,10 @@
 # testy integracyjne
 
-TL;DR
+* TL;DR
 
 	Najważniejszym skryptem jest *tester* - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
 
-URUCHAMIANIE
+* URUCHAMIANIE
 
 		. (spacja) setup
 
@@ -14,7 +14,7 @@ URUCHAMIANIE
 
 	UWAGA: po kropce MUSI znajdować się spacja.
 
-INTRO
+* INTRO
 
 	w tym folderze znajdują się wszystkie skrypty, które obsługują zdefiniowane w springu endpointu z poziomu linii poleceń - dzięki temu testujemy jak backend obsługuje żądania HTTP.
 	Na początku każdego skryptu znajduje się opis, jak wywołać dany skrypt, co robi dane wywołanie, ew. todo dla każdego skryptu.
@@ -25,57 +25,57 @@ INTRO
 	skrypty mają pewne zabezpieczenia na złe wywołania, ale 99,(9)% z nich została napisana w ~5h, na dodatek w godzinach nocnych, 
 	więc przy złym wywołaniu jest możliwość uzyskania niepoprawnego żądania bez żadnego komunikatu błędu. 
 
-STRUKTURA PLIKÓW
+* STRUKTURA PLIKÓW
 
 	istotne są 4 foldery:
 
-* *tests*:
+* * *tests*:
 
 	W tym folderze znajdują się wykonywane testy. 
 	Jako wynik testu traktowane jest standardowe wyjście testu, które jest zapisywane - testy mają formę skryptów Basha, jednak przy ich wykonywaniu jest przygotowane całe środowisko, i można wygodnie korzystać ze skryptów.
 	Pliki mogą mieć (prawie) dowolne nazwy, aby tylko z sensem - wszystkie pliki znajdujące się w tym folderze zostaną wykonane.
 
-* *resps*:
+* * *resps*:
 
 	[skrót od resp(onse)s] W tym folderze znajdują się żądane wyniki testów - każdy z plików powinien mieć odpowiadający test o identycznej nazwie pliku w katalogu *tests*.
 
-* *scripts*:
+* * *scripts*:
 
 	Większość skryptów, która odwalają potrzebną robotę. Opis działania i możliwe wywołania znajdują się w sekcji SKRYPTY.
 
-* *cache*:
+* * *cache*:
 
 	Tymczasowe wyniki skryptów do plików - między innymi zapisywane są tu: dane użytkownika potrzebne do logowania, odpowiedzi serwera, itd.
 
 	Poza tymi folderami istotne są jeszcze skrypty *setup* oraz *sin*.
 
-* *setup*:
+* * *setup*:
 
 	Ten skrypt ustawia znaczącą większość środowiska potrzebną do wykonywania testów integracyjnych, ale ręcznie (z linii poleceń) - np. ustawia prawa wykonywania na skryptach,
 	tworzy funkcje upraszczające wywoływanie poszczególnych skryptów.
 
-* *sin*:
+* * *sin*:
 
 	[skrót od s(ign)in] Loguje danego użytkownika - ze względów technicznych nie można było nazwać ten skrypt in.
 
 	poza tym, znajdują się też mniej istotne rzeczy, takie jak:
 
-* folder *outputs*:
+* * folder *outputs*:
 
 	otrzymane wyniki testów - sprawdzane jest, czy każdy z tych plików jest zgodny z plikiem o identycznej nazwie z folderu *resps*.
 
-* logs:
+* * logs:
 
 	plik, w którym zapisana jest zapisane wyjście skryptu *tester* do analizy poza działaniem testów. 
 
-SKRYPTY
+* SKRYPTY
 
-* *tester*:
+* * *tester*:
 
 	Sprawdza zgodność nazw plików *resps* z *tests*; wykonuje wszystkie testy zdefiniowane w *tests*; zapisuje ich wynik do odpowiednich plików w katalogu *outputs*; porównuje wynik każdego
 	testu z *outputs* z wzorcowym plikiem z *resps*; wypisuje wszystkie nieudane testy.
 
-* *setup*:
+* * *setup*:
 
  	ustawia wszystkie potrzebne, oraz wygodne, ustawienia do uruchamiania skryptów.
 
@@ -89,7 +89,7 @@ SKRYPTY
 	jest jego source'owanie do poprawnego działania. Dodatkowo, ustawia prawa wykonywania na wszystkich potrzebnych skryptach.
 	UWAGA: definicje powyższych funkcji zakładają, że komendy są wykonywane z poziomu katalogu bash.
 
-* *sin*:
+* * *sin*:
 
 
  	skrót od s(ign)in
@@ -106,7 +106,7 @@ SKRYPTY
 	Loguje się przedstawionymi danymi użytkownika. Z odpowiedzi serwera wyciąga token JWT, zapisuje go do zmiennej `token`, po czym go eksportuje; stąd, do poprawnego działania potrzebne jest
 	source'owanie tego skryptu.
 
-* *get*:
+* * *get*:
 
 	wywołanie:
 
@@ -131,7 +131,7 @@ SKRYPTY
 
 	Wykonuje żądanie HTTP GET, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* *put*:
+* * *put*:
 
  	aktualizuje stan zadanie znajdującego się już w bazie.
 
@@ -148,7 +148,7 @@ SKRYPTY
 
 	Wykonuje żądanie HTTP PUT, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* *post*:
+* * *post*:
 
 
  	wywołanie: 
@@ -162,7 +162,7 @@ SKRYPTY
 
 	Wykonuje żądanie HTTP POST, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* *del*:
+* * *del*:
 
 	wywołanie: 
 
@@ -173,7 +173,7 @@ SKRYPTY
 
 	Wykonuje żądanie HTTP DELETE, oraz kilka obudowujących czynności obudowujących te żądanie.
 
-* *up*:
+* * *up*:
 
 	skrót od (sign)up - rejestruje użytkownika
 
@@ -184,7 +184,7 @@ SKRYPTY
 
 	Rejestruje użytkownika o wskazanych danych.
 
-* *init*:
+* * *init*:
 
 	wywolanie:
 
@@ -196,7 +196,7 @@ SKRYPTY
 	Wypełnia bazę danych przykładowymi i generycznymi danymi. Póki co jest to: 10 użytkowników user1-10, z hasłem password. Potem dodaje 20 zadań, z losowanym tytułem oraz opisem spośród 7
 	nazw i opisów zdefiniiowanych w tym skrypcie.
 
-* *ubuntu_startup*:
+* * *ubuntu_startup*:
 
 	wywołanie:
 		ubuntu_startup
@@ -206,7 +206,7 @@ SKRYPTY
 	.github/workflows/mvn.yml w sekcji run; trzeba skonfigurować Ubuntu, gdyż jest to świeżo zainstalowany system operacyjny, i trzeba między innymi zabawić się w konfigurację Postgresa; 
 	inaczej Maven się nie uruchamia. Ten skrypt właśnie wykonuje całą konfigurację Ubuntu.
 
-* *funcs*:
+* * *funcs*:
 
 	Definiuje funkcję, która wyciąga dane pole z odpowiedzi serwera i zapisuje są do wskazanego pliku.
 
