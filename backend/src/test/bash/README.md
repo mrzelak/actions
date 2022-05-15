@@ -1,10 +1,10 @@
 # testy integracyjne
 
-* TL;DR
+* **TL;DR**
 
 	Najważniejszym skryptem jest *tester* - wykonuje testy z poziomu żądań HTTP i porównuje je ze wzorcowymi odpowiedziami.
 
-* URUCHAMIANIE
+* **URUCHAMIANIE**
 
 		. (spacja) setup
 
@@ -14,7 +14,7 @@
 
 	UWAGA: po kropce MUSI znajdować się spacja.
 
-* INTRO
+* **INTRO**
 
 	w tym folderze znajdują się wszystkie skrypty, które obsługują zdefiniowane w springu endpointu z poziomu linii poleceń - dzięki temu testujemy jak backend obsługuje żądania HTTP.
 	Na początku każdego skryptu znajduje się opis, jak wywołać dany skrypt, co robi dane wywołanie, ew. todo dla każdego skryptu.
@@ -25,7 +25,7 @@
 	skrypty mają pewne zabezpieczenia na złe wywołania, ale 99,(9)% z nich została napisana w ~5h, na dodatek w godzinach nocnych, 
 	więc przy złym wywołaniu jest możliwość uzyskania niepoprawnego żądania bez żadnego komunikatu błędu. 
 
-* STRUKTURA PLIKÓW
+* **STRUKTURA PLIKÓW**
 
 	Istotne są 4 foldery:
 
@@ -68,7 +68,7 @@
 
 	plik, w którym zapisana jest zapisane wyjście skryptu *tester* do analizy poza działaniem testów. 
 
-* SKRYPTY
+* **SKRYPTY**
 
 	* *tester*:
 
